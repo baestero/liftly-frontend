@@ -1,0 +1,3 @@
+# Liftly - Frontend
+
+## React + Vite
