@@ -48,3 +48,11 @@ a {
   padding: 0 1rem;
   margin: 0 auto;
 }
+.error {
+  background: #ffcccc;
+  padding: 10px 20px;
+  color: #f31;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  border-radius: 8px;
+}
