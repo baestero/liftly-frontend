@@ -1,79 +1,50 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
+* {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fff;
-  color: #000;
+  padding-top: 4rem;
+  margin: 0;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", Georgia;
+  font-family: var(--type-first);
 }
 
-main,
-header,
-footer,
-section,
-article,
-aside,
-nav {
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-  border: none;
-  background: none;
-  outline: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-p,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+p {
+  margin: 0px;
 }
 
-::selection {
-  background: rgba(0, 123, 255, 0.3);
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
