@@ -6,7 +6,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Login from "./components/Login/Login";
-import Message from "./components/Message";
+import User from "./components/User/User";
+import ProtectedRouter from "./components/Helpers/ProtectedRouter";
 
 const App = () => {
   return (
@@ -14,10 +15,17 @@ const App = () => {
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Message />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
+            <Route
+              path="/conta/*"
+              element={
+                <ProtectedRouter>
+                  <User />
+                </ProtectedRouter>
+              }
+            />
           </Routes>
           <Footer />
         </UserStorage>

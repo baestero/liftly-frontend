@@ -11,6 +11,17 @@ export const TOKEN_POST = (body) => {
   };
 };
 
+export const USER_POST = (body) => {
+  return {
+    url: `${API_URL}/user/register`,
+    options: {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(body),
+    },
+  };
+};
+
 export const USER_GET = (token) => {
   return {
     url: `${API_URL}/user/me`,

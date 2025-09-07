@@ -1,13 +1,11 @@
 import React from "react";
-import { UserContext } from "../UserContext";
+import styles from "../Helpers/Message.module.css";
 
-const Message = () => {
-  const { message } = React.useContext(UserContext);
-
+const Message = ({ message }) => {
   if (!message) return null;
 
   return (
-    <div className="container">
+    <div className={`${styles.message} animeLeft`}>
       {message.map((msg) => (
         <p className="error" key={msg}>
           {msg}

@@ -6,6 +6,11 @@ const types = {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: "Preencha um email válido",
   },
+
+  password: {
+    regex: /^.{4,}$/,
+    message: "A senha precisa de no mínimo 4 caracteres!",
+  },
 };
 
 const useForm = (type) => {
@@ -16,7 +21,6 @@ const useForm = (type) => {
     if (type === false) {
       return true;
     }
-
     if (value.length === 0) {
       setError("Preencha um valor");
       return false;
