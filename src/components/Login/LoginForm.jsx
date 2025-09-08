@@ -33,21 +33,14 @@ const LoginForm = () => {
         {loading ? (
           <Button disabled>Carregando ...</Button>
         ) : (
-          <Button>Entrar</Button>
+          <div className={styles.buttonContainer}>
+            <Button>Entrar</Button>
+            <Link className={stylesBtn.button} to={"/login/criar"}>
+              Cadastro
+            </Link>
+          </div>
         )}
       </form>
-
-      <Link className={styles.perdeu} to={"/login/perdeu"}>
-        Perdeu a senha?
-      </Link>
-
-      <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda não possui conta? Cadastre-se no site</p>
-        <Link className={stylesBtn.button} to={"/login/criar"}>
-          Cadastro
-        </Link>
-      </div>
     </section>
   );
 };

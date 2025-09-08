@@ -40,3 +40,8 @@
   width: 3rem;
   border-radius: 0.2rem;
 }
+
+.buttonContainer {
+  display: flex;
+  gap: 5px;
+}

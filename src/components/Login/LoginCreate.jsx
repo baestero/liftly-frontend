@@ -28,7 +28,7 @@ const LoginCreate = () => {
   };
 
   return (
-    <section className="animeleft">
+    <section className="animeLeft">
       <Message message={message} />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handlesubmit}>
