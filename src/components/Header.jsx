@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/bolt.svg?react";
 import { UserContext } from "../UserContext";
+import Logout from "../Assets/logout.svg?react";
 
 const Header = () => {
   const { dataUser, userLogout } = React.useContext(UserContext);
@@ -10,13 +11,13 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
-        <Link className={styles.logo} to={"/"} aria-label="Dogs - Home">
+        <Link className={styles.logo} to={"/"} aria-label="Liftly - Home">
           <Logo />
         </Link>
         {dataUser ? (
-          <Link className={styles.login} to={"/conta"}>
-            {dataUser.username}
-            <button onClick={userLogout}>Sair</button>
+          <Link className={styles.login} to={"/dashboard"}>
+            {`Olá ${dataUser.username}`}
+            <Logout className={styles.iconLogout} onClick={userLogout} />
           </Link>
         ) : (
           <Link className={styles.login} to={"/login"}>

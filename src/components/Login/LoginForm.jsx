@@ -5,8 +5,10 @@ import Input from "../Forms/Input";
 import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import styles from "./LoginForm.module.css";
-import stylesBtn from "../Forms/Button.module.css";
 import Message from "../Helpers/Message";
+import stylesBtn from "../Forms/Button.module.css";
+import User from "../../Assets/user.svg?react";
+import Password from "../../Assets/password.svg?react";
 
 const LoginForm = () => {
   const { userLogin, loading, message } = React.useContext(UserContext);
@@ -23,25 +25,52 @@ const LoginForm = () => {
   };
 
   return (
-    <section className="animeLeft">
-      <Message message={message} />
-      <h1 className="title">Login</h1>
+    <>
+      <section className={`${styles.loginContainer} animeLeft`}>
+        <h1 className="title">Liftly</h1>
+        <h2 className="subtitle">Bem vindo de volta</h2>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuario" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        {loading ? (
-          <Button disabled>Carregando ...</Button>
-        ) : (
-          <div className={styles.buttonContainer}>
-            <Button>Entrar</Button>
-            <Link className={stylesBtn.button} to={"/login/criar"}>
-              Cadastro
-            </Link>
+        <form onSubmit={handleSubmit}>
+          <Message message={message} />
+
+          <div className={styles.inputContainer}>
+            <User className={styles.icon} />
+            <Input
+              type="text"
+              name="username"
+              placeholder="Usuário"
+              {...username}
+            />
           </div>
-        )}
-      </form>
-    </section>
+
+          <div className={styles.inputContainer}>
+            <Password className={styles.icon} />
+            <Input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              {...password}
+            />
+          </div>
+          {loading ? (
+            <div className={styles.buttonContainer}>
+              <Button className={stylesBtn.button} disabled>
+                Carregando ...
+              </Button>
+            </div>
+          ) : (
+            <div className={styles.buttonContainer}>
+              <Button className={stylesBtn.button}>Entrar</Button>
+
+              <Link className={stylesBtn.buttonCadastrar} to={"/login/criar"}>
+                {" "}
+                Cadastro
+              </Link>
+            </div>
+          )}
+        </form>
+      </section>
+    </>
   );
 };
 

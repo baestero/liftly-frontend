@@ -46,17 +46,39 @@ a {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   padding: 0 1rem;
   margin: 0 auto;
 }
 
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+}
+
+.home::before {
+  content: "";
+  display: block;
+  background: url("/src/Assets/boltcopy.svg") no-repeat center center;
+  background-color: #036656;
+}
+
 .title {
-  font-family: var(--type-second);
-  line-height: 1;
-  font-size: 3rem;
-  margin: 1rem 0;
-  position: relative;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.descricao {
+  color: #777;
+  margin-bottom: 10px;
 }
 
 .animeLeft {
@@ -69,5 +91,28 @@ a {
   to {
     opacity: 1;
     transform: initial;
+  }
+}
+
+@media (max-width: 40rem) {
+  .title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 40rem) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .home::before {
+    display: none;
   }
 }

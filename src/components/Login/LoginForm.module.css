@@ -1,7 +1,3 @@
-.form {
-  margin-bottom: 2rem;
-}
-
 .perdeu {
   display: inline-block;
   color: #666;
@@ -21,27 +17,40 @@
   margin-top: 4rem;
 }
 
-.cadastro p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.subtitle {
-  font-family: var(--type-second);
-  line-height: 1;
-  font-size: 2rem;
-}
-
-.subtitle:after {
-  content: "";
-  display: block;
-  background: #ddd;
-  height: 0.5rem;
-  width: 3rem;
-  border-radius: 0.2rem;
-}
-
 .buttonContainer {
   display: flex;
-  gap: 5px;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.inputContainer {
+  position: relative;
+}
+.inputContainer input {
+  padding-left: 50px;
+}
+
+.icon,
+.iconSingup {
+  position: absolute;
+  top: 12.5px;
+  right: 300px;
+}
+
+.iconSingup {
+  right: 300px;
+}
+
+.halter {
+  margin-left: 6.75px;
+}
+@media (max-width: 40rem) {
+  .icon {
+    right: 232.5px;
+  }
+
+  .iconSingup {
+    right: 232.5px;
+  }
 }

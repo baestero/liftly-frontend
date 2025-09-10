@@ -1,11 +1,17 @@
 import React from "react";
 import Input from "../Forms/Input";
 import Button from "../Forms/Button";
+import styles from "./LoginForm.module.css";
+import stylesBtn from "../Forms/Button.module.css";
 import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Message from "../Helpers/Message";
+import User from "../../Assets/user.svg?react";
+import Password from "../../Assets/password.svg?react";
+import Email from "../../Assets/email.svg?react";
+import Halter from "../../Assets/halter.svg?react";
 
 const LoginCreate = () => {
   const username = useForm();
@@ -29,16 +35,55 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
-      <Message message={message} />
-      <h1 className="title">Cadastre-se</h1>
+      <h1 className="title">Liftly</h1>
+      <h2 className="subtitle">
+        Cadastre-se aqui
+        <Halter className={styles.halter} />
+      </h2>
       <form onSubmit={handlesubmit}>
-        <Input label="Usuario" type="text" name="username" {...username} />
-        <Input label="Email" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Message message={message} />
+
+        <div className={styles.inputContainer}>
+          <User className={styles.iconSingup} />
+          <Input
+            label="Usuario"
+            type="text"
+            name="username"
+            placeholder="Usuario"
+            {...username}
+          />
+        </div>
+
+        <div className={styles.inputContainer}>
+          <Email className={styles.iconSingup} />
+          <Input
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            {...email}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <Password className={styles.iconSingup} />
+          <Input
+            label="Senha"
+            type="password"
+            name="password"
+            placeholder="Senha"
+            {...password}
+          />
+        </div>
         {loading ? (
-          <Button disabled>Cadastrando...</Button>
+          <div className={styles.buttonContainer}>
+            <Button className={stylesBtn.buttonCadastrar} disabled>
+              Cadastrando...
+            </Button>
+          </div>
         ) : (
-          <Button>Cadastrar</Button>
+          <div className={styles.buttonContainer}>
+            <Button className={stylesBtn.buttonCadastrar}>Cadastrar</Button>
+          </div>
         )}
       </form>
     </section>

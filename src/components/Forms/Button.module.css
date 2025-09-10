@@ -1,20 +1,27 @@
-.button {
+.button,
+.buttonCadastrar {
   font-size: 1rem;
   font-family: var(--type-first);
   cursor: pointer;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 10px;
   background: #06d6a0;
-  color: #036656;
-  padding: 0.8rem 1.2rem;
+  color: #fff;
+  padding: 1rem;
   box-sizing: border-box;
   transition: 0.1s;
   min-width: 8rem;
   text-align: center;
 }
 
+.buttonCadastrar {
+  background: #fff;
+  color: #777;
+}
+
 .button:hover,
-.button:focus {
+.buttonCadastrar:hover,
+.buttonCadastrar:focus .button:focus {
   outline: none;
   box-shadow: 0 0 0 3px #99f5e0, 0 0 0 4px #06d6a0;
 }

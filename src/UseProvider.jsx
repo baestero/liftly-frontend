@@ -23,7 +23,7 @@ export const UserStorage = ({ children }) => {
       }
       window.localStorage.setItem("token", token);
       await getUser(token);
-      navigate("/conta");
+      navigate("/dashboard");
     } catch {
       setLogin(false);
     } finally {

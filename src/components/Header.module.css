@@ -34,3 +34,8 @@
   position: relative;
   top: -1px;
 }
+
+.iconLogout {
+  margin-left: 10px;
+  margin-right: 5px;
+}

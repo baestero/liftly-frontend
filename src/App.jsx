@@ -4,9 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserStorage } from "./UseProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Intro from "./components/Intro";
 import Login from "./components/Login/Login";
-import User from "./components/User/User";
+import Dashboard from "./components/Dashboard/Dashboard";
 import ProtectedRouter from "./components/Helpers/ProtectedRouter";
 
 const App = () => {
@@ -16,13 +16,13 @@ const App = () => {
         <UserStorage>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Intro />} />
             <Route path="/login/*" element={<Login />} />
             <Route
-              path="/conta/*"
+              path="/dashboard/*"
               element={
                 <ProtectedRouter>
-                  <User />
+                  <Dashboard />
                 </ProtectedRouter>
               }
             />
