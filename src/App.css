@@ -106,8 +106,7 @@ a {
     font-weight: 500;
     margin-bottom: 40px;
   }
-}
-@media (max-width: 40rem) {
+
   .home {
     grid-template-columns: 1fr;
   }

@@ -1,14 +1,20 @@
 import React from "react";
 import styles from "../Dashboard/Dashboard.module.css";
+import { Routes, Route } from "react-router-dom";
+import Categories from "../Dashboard/Categories";
+import SubCategories from "../Dashboard/SubCategories";
 
-const User = () => {
+const Dashboard = () => {
   return (
     <section className="home">
-      <div className={styles.dashboardContainer}>
-        <h1 className="title">Categorias</h1>
+      <div className={`${styles.dashboardContainer} animeLeft`}>
+        <Routes>
+          <Route path="/" element={<Categories />} />
+          <Route path=":id?" element={<SubCategories />} />
+        </Routes>
       </div>
     </section>
   );
 };
 
-export default User;
+export default Dashboard;
