@@ -55,15 +55,77 @@ export const CATEGORY_GET = (token) => {
   };
 };
 
-export const SUBCATEGORY_GET = (token, id) => {
+export const SUBCATEGORY_GET = (token, categoryId) => {
   return {
-    url: `${API_URL}/categories/${id}/subcategories`,
+    url: `${API_URL}/categories/${categoryId}/subcategories`,
     options: {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+    },
+  };
+};
+
+export const EXERCISE_GET = (token, categoryId, subCategoryId) => {
+  return {
+    url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises`,
+    options: {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+};
+export const EXERCISE_POST = (token, categoryId, subCategoryId, body) => {
+  return {
+    url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
+    },
+  };
+};
+export const EXERCISE_DELETE = (
+  token,
+  categoryId,
+  subCategoryId,
+  exerciseId
+) => {
+  return {
+    url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises/${exerciseId}`,
+    options: {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+};
+export const EXERCISE_EDIT = (
+  token,
+  categoryId,
+  subCategoryId,
+  exerciseId,
+  body
+) => {
+  return {
+    url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises/${exerciseId}`,
+    options: {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(body),
     },
   };
 };

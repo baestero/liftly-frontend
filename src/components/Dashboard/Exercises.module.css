@@ -1,0 +1,60 @@
+.exerciseContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exercise {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d1c1c;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.exercise img {
+  display: flex;
+  margin-bottom: 5px;
+  height: 64px;
+  width: 64px;
+}
+
+.exercise p {
+  color: #fff;
+}
+
+.exerciseHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exerciseHeader img {
+  height: 54px;
+  width: 54px;
+  background: #1d1c1c;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.exerciseBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.crudIcons {
+  display: flex;
+  gap: 20px;
+  padding-right: 10px;
+}
+.crudIcons img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}

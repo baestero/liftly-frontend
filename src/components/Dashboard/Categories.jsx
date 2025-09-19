@@ -1,32 +1,28 @@
 import React from "react";
-import styles from "../Dashboard/SubCategories.module.css";
+import styles from "../Dashboard/Categories.module.css";
 import { CATEGORY_GET } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import Message from "../Helpers/Message";
 import { Link } from "react-router-dom";
-import superioresImg from "../../Assets/superiores2.png";
-import inferioresImg from "../../Assets/inferiores.png";
-import abdomenImg from "../../Assets/abdomen.png";
-import cardioImg from "../../Assets/cardio.png";
 
 const categoryIcons = {
-  "68c0e4d09615344715b20eca": superioresImg,
-  "68c0e4d89615344715b20ecc": inferioresImg,
-  "68c0e4f59615344715b20ece": abdomenImg,
-  "68c0e4fb9615344715b20ed0": cardioImg,
+  "68c0e4d09615344715b20eca": "/Assets/superiores2.png",
+  "68c0e4d89615344715b20ecc": "/Assets/inferiores.png",
+  "68c0e4f59615344715b20ece": "/Assets/abdomen.png",
+  "68c0e4fb9615344715b20ed0": "/Assets/cardio.png",
 };
 
 const Categories = () => {
   const { data, loading, message, request } = useFetch();
 
   React.useEffect(() => {
-    const listarCategorias = async () => {
+    const listarCategories = async () => {
       const token = window.localStorage.getItem("token");
       const { url, options } = CATEGORY_GET(token);
       await request(url, options);
     };
 
-    listarCategorias();
+    listarCategories();
   }, [request]);
 
   return (
@@ -36,17 +32,20 @@ const Categories = () => {
       <Message message={message} />
       {loading && <p>Carregando ...</p>}
 
-      <div className={styles.categoriaContainer}>
+      <div className={styles.categoryContainer}>
         {data &&
-          data.map((categoria) => (
-            <Link key={categoria._id} to={`${categoria._id}`}>
-              <div className={styles.categoria}>
+          data.map((category) => (
+            <Link
+              key={category._id}
+              to={`categories/${category._id}/subcategories`}
+            >
+              <div className={styles.category}>
                 <img
                   className={styles.img}
-                  src={categoryIcons[categoria._id]}
+                  src={categoryIcons[category._id]}
                   alt=""
                 />
-                <p>{categoria.name}</p>
+                <p>{category.name}</p>
               </div>
             </Link>
           ))}

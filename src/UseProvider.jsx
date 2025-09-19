@@ -26,6 +26,7 @@ export const UserStorage = ({ children }) => {
       navigate("/dashboard");
     } catch {
       setLogin(false);
+      setMessage(["Serviço temporariamente indisponivel."]);
     } finally {
       setLoding(false);
     }

@@ -22,7 +22,7 @@ const useFetch = () => {
     }
   }, []);
 
-  return { data, loading, message, request };
+  return { data, setData, loading, message, request };
 };
 
 export default useFetch;

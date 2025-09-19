@@ -1,10 +1,10 @@
-.categoriaContainer {
+.categoryContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.categoria {
+.category {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,17 +18,19 @@
   transition: 0.1s;
 }
 
-.categoria:hover {
+.category:hover,
+.exercise:hover,
+.exerciseHeader img:hover {
   outline: none;
   box-shadow: 0 0 0 5px #99f5e0, 0 0 0 4px #06d6a0;
 }
 
-.categoria img {
+.category img {
   margin-bottom: 20px;
   height: 64px;
   width: 64px;
 }
 
-.categoria p {
+.category p {
   color: #fff;
 }
