@@ -22,23 +22,24 @@ const Exercises = () => {
   }, [categoryId, subCategoryId, request]);
 
   const removeExercise = async (exerciseId) => {
-    try {
-      const token = window.localStorage.getItem("token");
-      const { url, options } = EXERCISE_DELETE(
-        token,
-        categoryId,
-        subCategoryId,
-        exerciseId
-      );
-      const { response } = await request(url, options);
+    if (window.confirm("Deseja realmente remover esse exercicio?"))
+      try {
+        const token = window.localStorage.getItem("token");
+        const { url, options } = EXERCISE_DELETE(
+          token,
+          categoryId,
+          subCategoryId,
+          exerciseId
+        );
+        const { response } = await request(url, options);
 
-      if (response.ok) {
-        alert("Exercício deletado com sucesso!");
-        navigate(0);
+        if (response.ok) {
+          alert("Exercício deletado com sucesso!");
+          navigate(0);
+        }
+      } catch (err) {
+        console.error(err.message);
       }
-    } catch (err) {
-      console.error(err.message);
-    }
   };
 
   return (
@@ -51,22 +52,33 @@ const Exercises = () => {
           <img src="/Assets/mais (2).png" alt="" />
         </Link>
       </div>
+
       <Message message={message} />
       {loading && <p>Carregando ...</p>}
+
       <div className={styles.exerciseContainer}>
         {data &&
           data.map((exercise) => (
             <div key={exercise._id} className={styles.exercise}>
-              <div className={styles.exerciseBox}>
+              <div className={styles.exerciseTitle}>
                 <img
                   className={styles.img}
                   src={"/Assets/haltere (1).png"}
                   alt=""
                 />
-                <p>{exercise.name}</p>
-                <p>Reps: {exercise.sets}</p>
-                <p>Séries: {exercise.reps}</p>
-                <p>PR: {exercise.maxWeight}Kg</p>
+                <h3>{exercise.name}</h3>
+              </div>
+
+              <div className={styles.exerciseStats}>
+                <p>
+                  Repetições: <span>{exercise.sets}</span>
+                </p>
+                <p>
+                  Séries: <span>{exercise.reps}</span>
+                </p>
+                <p>
+                  PR: <span>{exercise.maxWeight}kg</span>
+                </p>
               </div>
               <div className={styles.crudIcons}>
                 <Link
