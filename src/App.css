@@ -60,7 +60,7 @@ a {
 .home::before {
   content: "";
   display: block;
-  background: url("/src/Assets/boltcopy.svg") no-repeat center center;
+  background: url("/src/assets/boltcopy.svg") no-repeat center center;
   background-color: #036656;
 }
 
