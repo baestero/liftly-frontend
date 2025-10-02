@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
-import Logo from "../../Assets/bolt.svg?react";
+import Logo from "../Assets/bolt.svg?react";
 import { UserContext } from "../UserContext";
-import Logout from "../../Assets/logout.svg?react";
+import Logout from "../Assets/logout.svg?react";
 
 const Header = () => {
   const { dataUser, userLogout } = React.useContext(UserContext);
