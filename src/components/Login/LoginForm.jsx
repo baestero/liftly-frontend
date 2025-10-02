@@ -7,8 +7,8 @@ import useForm from "../../Hooks/useForm";
 import styles from "./LoginForm.module.css";
 import Message from "../Helpers/Message";
 import stylesBtn from "../Forms/Button.module.css";
-import User from "../../Assets/user.svg?react";
-import Password from "../../Assets/password.svg?react";
+import User from "../../assets/user.svg?react";
+import Password from "../../assets/password.svg?react";
 
 const LoginForm = () => {
   const { userLogin, loading, message } = React.useContext(UserContext);

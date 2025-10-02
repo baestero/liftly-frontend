@@ -8,10 +8,10 @@ import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Message from "../Helpers/Message";
-import User from "../../Assets/user.svg?react";
-import Password from "../../Assets/password.svg?react";
-import Email from "../../Assets/email.svg?react";
-import Halter from "../../Assets/halter.svg?react";
+import User from "../../assets/user.svg?react";
+import Password from "../../assets/password.svg?react";
+import Email from "../../assets/email.svg?react";
+import Halter from "../../assets/halter.svg?react";
 
 const LoginCreate = () => {
   const username = useForm();
