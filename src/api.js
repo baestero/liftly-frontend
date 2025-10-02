@@ -80,6 +80,23 @@ export const EXERCISE_GET = (token, categoryId, subCategoryId) => {
     },
   };
 };
+export const EXERCISE_GET_ID = (
+  token,
+  categoryId,
+  subCategoryId,
+  exerciseId
+) => {
+  return {
+    url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises/${exerciseId}`,
+    options: {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  };
+};
 export const EXERCISE_POST = (token, categoryId, subCategoryId, body) => {
   return {
     url: `${API_URL}/categories/${categoryId}/subcategories/${subCategoryId}/exercises`,

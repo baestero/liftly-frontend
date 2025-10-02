@@ -32,7 +32,6 @@ const AddExercise = () => {
       const { response } = await request(url, options);
 
       if (response.ok) {
-        alert("Exercício adicionado com sucesso!");
         navigate(-1);
       }
     } catch (err) {

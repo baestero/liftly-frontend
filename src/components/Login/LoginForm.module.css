@@ -45,7 +45,7 @@
 .halter {
   margin-left: 6.75px;
 }
-@media (max-width: 40rem) {
+@media (max-width: 45rem) {
   .icon {
     right: 232.5px;
   }

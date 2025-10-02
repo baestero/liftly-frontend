@@ -34,7 +34,6 @@ const Exercises = () => {
         const { response } = await request(url, options);
 
         if (response.ok) {
-          alert("Exercício deletado com sucesso!");
           navigate(0);
         }
       } catch (err) {
