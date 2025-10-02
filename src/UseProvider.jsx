@@ -15,33 +15,18 @@ export const UserStorage = ({ children }) => {
       setMessage(null);
       setLoding(true);
       const { url, options } = TOKEN_POST({ username, password });
-
       const response = await fetch(url, options);
-      const status = response.status;
-      const text = await response.text();
-
-      let json;
-      try {
-        json = JSON.parse(text);
-      } catch (err) {
-        console.error("Resposta não é JSON:", text);
-        throw new Error("Resposta inválida do servidor");
-      }
-
-      const { token, message } = json;
-
-      if (!response.ok || !token) {
-        setMessage(message || "Erro ao autenticar usuário.");
+      const { token, message } = await response.json();
+      if (!response.ok) {
+        setMessage(message);
         return;
       }
-
       window.localStorage.setItem("token", token);
       await getUser(token);
       navigate("/dashboard");
-    } catch (err) {
-      console.error("Erro no login:", err);
+    } catch {
       setLogin(false);
-      setMessage(["Serviço temporariamente indisponível."]);
+      setMessage(["Serviço temporariamente indisponivel."]);
     } finally {
       setLoding(false);
     }

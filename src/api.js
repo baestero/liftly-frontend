@@ -1,8 +1,9 @@
-export const API_URL = "http://unregrettably-unsinkable-noriko.ngrok-free.dev/";
+export const API_URL = "http://localhost:3000";
 
 export const TOKEN_POST = (body) => {
   return {
     url: `${API_URL}/users/auth`,
+
     options: {
       method: "POST",
       headers: { "Content-Type": "application/json" },
