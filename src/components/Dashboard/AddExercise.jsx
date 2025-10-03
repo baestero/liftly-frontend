@@ -29,10 +29,11 @@ const AddExercise = () => {
         reps: reps.value,
         maxWeight: maxWeight.value,
       });
-      const { response } = await request(url, options);
+      const { response, json } = await request(url, options);
 
-      if (response.ok) {
-        navigate(-1);
+      if (response.ok) {''
+        console.log(json);
+        navigate(-1, { state: { message: json.message } });
       }
     } catch (err) {
       console.error(err);

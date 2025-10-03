@@ -70,10 +70,10 @@ const Exercises = () => {
 
               <div className={styles.exerciseStats}>
                 <p>
-                  Repetições: <span>{exercise.sets}</span>
+                  Séries: <span>{exercise.sets}</span>
                 </p>
                 <p>
-                  Séries: <span>{exercise.reps}</span>
+                  Repetições: <span>{exercise.reps}</span>
                 </p>
                 <p>
                   PR: <span>{exercise.maxWeight}kg</span>
