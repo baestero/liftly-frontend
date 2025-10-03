@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import { EXERCISE_DELETE, EXERCISE_GET } from "../../api";
 import Message from "../Helpers/Message";
@@ -7,8 +7,7 @@ import styles from "../Dashboard/Exercises.module.css";
 
 const Exercises = () => {
   const { categoryId, subCategoryId } = useParams();
-  const { data, loading, message, request } = useFetch();
-  const navigate = useNavigate();
+  const { data, loading, message, request, setData } = useFetch();
 
   React.useEffect(() => {
     if (categoryId && subCategoryId) {
@@ -22,7 +21,7 @@ const Exercises = () => {
   }, [categoryId, subCategoryId, request]);
 
   const removeExercise = async (exerciseId) => {
-    if (window.confirm("Deseja realmente remover esse exercicio?"))
+    if (window.confirm("Deseja realmente remover esse exercicio?")) {
       try {
         const token = window.localStorage.getItem("token");
         const { url, options } = EXERCISE_DELETE(
@@ -34,11 +33,12 @@ const Exercises = () => {
         const { response } = await request(url, options);
 
         if (response.ok) {
-          navigate(0);
+          setData(data.filter((exercise) => exercise._id !== exerciseId));
         }
       } catch (err) {
         console.error(err.message);
       }
+    }
   };
 
   return (
