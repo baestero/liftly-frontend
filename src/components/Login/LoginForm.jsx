@@ -55,7 +55,7 @@ const LoginForm = () => {
           {loading ? (
             <div className={styles.buttonContainer}>
               <Button className={stylesBtn.button} disabled>
-                Carregando ...
+                <div className="loading"></div>
               </Button>
             </div>
           ) : (

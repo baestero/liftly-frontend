@@ -32,7 +32,7 @@ const SubCategories = () => {
       <h1 className="title">Subcategorias</h1>
 
       <Message message={message} />
-      {loading && <p>Carregando ...</p>}
+      {loading && <div className="loading"></div>}
 
       <div className={styles.categoryContainer}>
         {data &&

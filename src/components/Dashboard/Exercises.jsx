@@ -53,7 +53,7 @@ const Exercises = () => {
       </div>
 
       <Message message={message} />
-      {loading && <p>Carregando ...</p>}
+      {loading && <div className="loading"></div>}
 
       <div className={styles.exerciseContainer}>
         {data &&

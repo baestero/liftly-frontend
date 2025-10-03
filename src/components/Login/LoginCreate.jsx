@@ -21,16 +21,23 @@ const LoginCreate = () => {
   const { userLogin } = React.useContext(UserContext);
   const { loading, message, request } = useFetch();
 
-  const handlesubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { url, options } = USER_POST({
-      username: username.value,
-      email: email.value,
-      password: password.value,
-    });
-    const { response } = await request(url, options);
 
-    if (response.ok) userLogin(username.value, password.value);
+    if (username.validate() && email.validate() && password.validate()) {
+      const { url, options } = USER_POST({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+      });
+
+      const { response } = await request(url, options);
+
+      if (response && response.ok) {
+        alert("Cadastro realizado com sucesso!");
+        userLogin(username.value, password.value);
+      }
+    }
   };
 
   return (
@@ -40,7 +47,7 @@ const LoginCreate = () => {
         Cadastre-se aqui
         <Halter className={styles.halter} />
       </h2>
-      <form onSubmit={handlesubmit}>
+      <form onSubmit={handleSubmit}>
         <Message message={message} />
 
         <div className={styles.inputContainer}>
@@ -77,7 +84,7 @@ const LoginCreate = () => {
         {loading ? (
           <div className={styles.buttonContainer}>
             <Button className={stylesBtn.buttonCadastrar} disabled>
-              Cadastrando...
+              <div className="loading"></div>
             </Button>
           </div>
         ) : (

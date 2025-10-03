@@ -87,6 +87,21 @@ a {
   animation: animeLeft 0.3s forwards;
 }
 
+.loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-right-color: transparent;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes animeLeft {
   to {
     opacity: 1;

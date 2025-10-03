@@ -30,7 +30,7 @@ const Categories = () => {
       <h1 className="title">Categorias</h1>
 
       <Message message={message} />
-      {loading && <p>Carregando ...</p>}
+      {loading && <div className="loading"></div>}
 
       <div className={styles.categoryContainer}>
         {data &&
