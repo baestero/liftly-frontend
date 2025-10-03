@@ -1,4 +1,4 @@
-# 🏋️ Liftly Frontend
+# Liftly Frontend
 
 Frontend da aplicação **Liftly** - Uma plataforma completa para gerenciamento de exercícios físicos e treinos. Este é o frontend React que se conecta com a API backend para fornecer uma interface moderna e intuitiva para usuários gerenciarem seus exercícios.
 
