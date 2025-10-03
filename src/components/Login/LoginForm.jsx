@@ -20,7 +20,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     if (username.validate() && password.validate()) {
-      userLogin(username.value, password.value);
+      userLogin(username.value.toLowerCase(), password.value);
     }
   };
 
