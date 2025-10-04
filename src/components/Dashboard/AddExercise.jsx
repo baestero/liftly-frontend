@@ -22,13 +22,15 @@ const AddExercise = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (reps.value >= 12) {
-      window.confirm(
+      const confirm = window.confirm(
         "Recomendação: diminua as repetições e aumente a carga 😉"
       );
-      return;
+
+      if (!confirm) {
+        return;
+      }
     }
 
-    e.preventDefault();
     try {
       const token = window.localStorage.getItem("token");
       const { url, options } = EXERCISE_POST(token, categoryId, subCategoryId, {
