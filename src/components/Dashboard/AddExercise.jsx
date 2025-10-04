@@ -21,6 +21,14 @@ const AddExercise = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (reps.value >= 12) {
+      window.confirm(
+        "Recomendação: diminua as repetições e aumente a carga 😉"
+      );
+      return;
+    }
+
+    e.preventDefault();
     try {
       const token = window.localStorage.getItem("token");
       const { url, options } = EXERCISE_POST(token, categoryId, subCategoryId, {
@@ -31,7 +39,8 @@ const AddExercise = () => {
       });
       const { response, json } = await request(url, options);
 
-      if (response.ok) {''
+      if (response.ok) {
+        ("");
         console.log(json);
         navigate(-1, { state: { message: json.message } });
       }
