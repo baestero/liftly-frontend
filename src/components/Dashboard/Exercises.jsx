@@ -4,8 +4,11 @@ import useFetch from "../../Hooks/useFetch";
 import { EXERCISE_DELETE, EXERCISE_GET } from "../../api";
 import Message from "../Helpers/Message";
 import styles from "../Dashboard/Exercises.module.css";
+import Feedback from "../Helpers/Feedback";
+import Logo from "../../assets/bolt.svg?react";
 
 const Exercises = () => {
+  const [feedback, setFeedback] = React.useState(null);
   const { categoryId, subCategoryId } = useParams();
   const { data, loading, message, request, setData } = useFetch();
 
@@ -34,6 +37,10 @@ const Exercises = () => {
 
         if (response.ok) {
           setData(data.filter((exercise) => exercise._id !== exerciseId));
+          setFeedback(true);
+          setTimeout(() => {
+            setFeedback(false);
+          }, 2000);
         }
       } catch (err) {
         console.error(err.message);
@@ -53,19 +60,18 @@ const Exercises = () => {
       </div>
 
       <Message message={message} />
+
       {loading && <div className="loading"></div>}
+
+      {feedback && <Feedback children={"🗑️ Exercicio removido com sucesso!"} />}
 
       <div className={styles.exerciseContainer}>
         {data &&
           data.map((exercise) => (
             <div key={exercise._id} className={styles.exercise}>
               <div className={styles.exerciseTitle}>
-                <img
-                  className={styles.img}
-                  src={"/Assets/haltere (1).png"}
-                  alt=""
-                />
                 <h3>{exercise.name}</h3>
+                <Logo className={styles.bolt} />
               </div>
 
               <div className={styles.exerciseStats}>

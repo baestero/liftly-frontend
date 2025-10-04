@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import Message from "../Helpers/Message";
 import useFetch from "../../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import Feedback from "../Helpers/Feedback";
 
 const EditExercise = () => {
   const { categoryId, subCategoryId, exerciseId } = useParams();
@@ -77,6 +78,15 @@ const EditExercise = () => {
 
       <form onSubmit={handleSubmit}>
         <Message message={message} />
+
+        {reps.value && reps.value >= 12 && (
+          <Feedback
+            children={
+              "💡 Recomendação: Diminua as repetições e aumente a carga!"
+            }
+          />
+        )}
+
         {data && (
           <>
             <Input

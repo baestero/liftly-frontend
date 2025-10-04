@@ -96,6 +96,19 @@ a {
   animation: loading 1s infinite;
 }
 
+.animeLeftOut {
+  opacity: 1;
+  transform: translateX(0);
+  animation: animeLeftOut 0.3s forwards;
+}
+
+@keyframes animeLeftOut {
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
 @keyframes loading {
   to {
     transform: rotate(360deg);

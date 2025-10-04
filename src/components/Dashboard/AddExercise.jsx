@@ -9,6 +9,7 @@ import Message from "../Helpers/Message";
 import useFetch from "../../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import styles from "../Dashboard/CrudExercises.module.css";
+import Feedback from "../Helpers/Feedback";
 
 const AddExercise = () => {
   const { categoryId, subCategoryId } = useParams();
@@ -21,15 +22,6 @@ const AddExercise = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (reps.value >= 12) {
-      const confirm = window.confirm(
-        "Recomendação: diminua as repetições e aumente a carga 😉"
-      );
-
-      if (!confirm) {
-        return;
-      }
-    }
 
     try {
       const token = window.localStorage.getItem("token");
@@ -39,12 +31,10 @@ const AddExercise = () => {
         reps: reps.value,
         maxWeight: maxWeight.value,
       });
-      const { response, json } = await request(url, options);
+      const { response } = await request(url, options);
 
       if (response.ok) {
-        ("");
-        console.log(json);
-        navigate(-1, { state: { message: json.message } });
+        navigate(-1);
       }
     } catch (err) {
       console.error(err);
@@ -57,6 +47,15 @@ const AddExercise = () => {
 
       <form onSubmit={handleSubmit}>
         <Message message={message} />
+
+        {reps.value && reps.value >= 12 && (
+          <Feedback
+            children={
+              "💡 Recomendação: Diminua as repetições e aumente a carga!"
+            }
+          />
+        )}
+
         <Input
           label="exercicio"
           type="text"
@@ -66,23 +65,23 @@ const AddExercise = () => {
         />
         <div className={styles.inputContainer}>
           <Input
-            label="sets"
+            label="series"
             type="text"
             name="series"
             placeholder="Numero de séries"
             {...sets}
           />
           <Input
-            label="reps"
+            label="repeticoes"
             type="text"
             name="repeticoes"
             placeholder="Número do repeticoes"
             {...reps}
           />
           <Input
-            label="maxWeight"
+            label="Peso maximo"
             type="text"
-            name="maxWeight"
+            name="Peso maximo"
             placeholder="Peso máximo"
             {...maxWeight}
           />

@@ -6,9 +6,9 @@
 
 .exercise {
   display: flex;
-  padding: 20px;
+  padding: 30px;
   flex-direction: column;
-  background-color: #084a3f;
+  background-color: #1d1c1c;
   width: 260px;
   height: 210px;
   border-radius: 15px;
@@ -16,11 +16,9 @@
   transition: 0.1s;
 }
 
-.exercise img {
-  display: flex;
-
-  height: 48px;
-  width: 48px;
+.exercise:hover {
+  outline: none;
+  box-shadow: 0 0 0 5px #99f5e0, 0 0 0 4px #06d6a0;
 }
 
 .exercise p {
@@ -41,17 +39,22 @@
   cursor: pointer;
   transition: 0.1s;
 }
+.exerciseHeader img:hover {
+  outline: none;
+  box-shadow: 0 0 0 5px #99f5e0, 0 0 0 4px #06d6a0;
+}
 
 .exerciseTitle {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 5px;
+  margin-bottom: 20px;
+  font-weight: bolds;
 }
 
 .exerciseTitle h3 {
   color: #fff;
-  font-weight: 100;
+  font-weight: bold;
   font-size: 1.25rem;
 }
 
@@ -63,16 +66,18 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .exerciseStats span {
   font-weight: bold;
+  color: #06d6a0;
 }
 
 .crudIcons {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   justify-content: end;
+  bottom: 20px;
 }
 .crudIcons img {
   height: 20px;
@@ -82,7 +87,7 @@
 
 @media (max-width: 40rem) {
   .exerciseTitle {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   .exercise {
     width: 100%;
@@ -91,10 +96,10 @@
 
   .exercise p,
   .exerciseStats span {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
   .exerciseStats {
-    gap: 15px;
+    gap: 17px;
   }
 }
