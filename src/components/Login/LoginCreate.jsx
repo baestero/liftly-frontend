@@ -53,7 +53,6 @@ const LoginCreate = () => {
         <div className={styles.inputContainer}>
           <User className={styles.iconSingup} />
           <Input
-            label="Usuario"
             type="text"
             name="username"
             placeholder="Usuario"
@@ -63,18 +62,11 @@ const LoginCreate = () => {
 
         <div className={styles.inputContainer}>
           <Email className={styles.iconSingup} />
-          <Input
-            label="Email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            {...email}
-          />
+          <Input type="email" name="email" placeholder="Email" {...email} />
         </div>
         <div className={styles.inputContainer}>
           <Password className={styles.iconSingup} />
           <Input
-            label="Senha"
             type="password"
             name="password"
             placeholder="Senha"
