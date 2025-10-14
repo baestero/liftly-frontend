@@ -7,7 +7,7 @@
   margin-bottom: 40px;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 55rem) {
   .dashboardContainer {
     max-width: 40rem;
     padding: 30px 20px;
