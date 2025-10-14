@@ -122,7 +122,7 @@ a {
   }
 }
 
-@media (max-width: 45rem) {
+@media (max-width: 55rem) {
   .title {
     font-size: 3.5rem;
     font-weight: 600;
@@ -137,6 +137,7 @@ a {
 
   .home {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .home::before {
