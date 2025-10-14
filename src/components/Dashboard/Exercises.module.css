@@ -9,10 +9,9 @@
   padding: 30px;
   flex-direction: column;
   background-color: #1d1c1c;
-  width: 260px;
-  height: 210px;
   border-radius: 15px;
   border: none;
+  width: 100%;
   transition: 0.1s;
 }
 

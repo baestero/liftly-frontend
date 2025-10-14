@@ -90,28 +90,28 @@ const EditExercise = () => {
         {data && (
           <>
             <Input
-              label="exercicio"
+              label="Exercicio"
               type="text"
               name="exercicio"
               placeholder="Nome do exercício"
               {...exercise}
             />
             <Input
-              label="sets"
+              label="Séries"
               type="text"
               name="series"
               placeholder="Número de séries"
               {...sets}
             />
             <Input
-              label="reps"
+              label="Repetições"
               type="text"
               name="repeticoes"
               placeholder="Número de repetições"
               {...reps}
             />
             <Input
-              label="maxWeight"
+              label="Peso Máximo"
               type="text"
               name="maxWeight"
               placeholder="Peso máximo"

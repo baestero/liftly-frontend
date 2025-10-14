@@ -57,7 +57,7 @@ const AddExercise = () => {
         )}
 
         <Input
-          label="exercicio"
+          label="Exercicio"
           type="text"
           name="exercicio"
           placeholder="Nome do exercicio"
@@ -65,21 +65,21 @@ const AddExercise = () => {
         />
         <div className={styles.inputContainer}>
           <Input
-            label="series"
+            label="Séries"
             type="text"
             name="series"
             placeholder="Numero de séries"
             {...sets}
           />
           <Input
-            label="repeticoes"
+            label="Repeticoes"
             type="text"
             name="repeticoes"
-            placeholder="Número do repeticoes"
+            placeholder="Número do repetições"
             {...reps}
           />
           <Input
-            label="Peso maximo"
+            label="Peso Máximo"
             type="text"
             name="Peso maximo"
             placeholder="Peso máximo"
