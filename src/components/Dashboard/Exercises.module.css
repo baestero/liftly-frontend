@@ -15,11 +15,6 @@
   transition: 0.1s;
 }
 
-.exercise:hover {
-  outline: none;
-  box-shadow: 0 0 0 5px #99f5e0, 0 0 0 4px #06d6a0;
-}
-
 .exercise p {
   color: #fff;
 }
