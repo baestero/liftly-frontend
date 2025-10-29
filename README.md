@@ -17,6 +17,7 @@ Frontend da aplicação **Liftly** - Uma plataforma completa para gerenciamento 
 - [Sistema de Autenticação](#sistema-de-autenticação)
 - [Gerenciamento de Estado](#gerenciamento-de-estado)
 - [Estilização](#estilização)
+- [Testes Automatizados (Cypress)](#testes-automatizados-cypress)
 - [Contribuição](#contribuição)
 
 ## 🎯 Sobre o Projeto
@@ -289,6 +290,57 @@ Configure a URL da API no arquivo `src/api.js`:
 ```javascript
 export const API_URL = process.env.REACT_APP_API_URL || "https://liftly-backend-fjhi.onrender.com";
 ```
+
+## 🧪 Testes Automatizados (Cypress)
+
+Os testes de interface end-to-end foram adicionados com Cypress para validar fluxos críticos como Home e Login.
+
+### Instalação
+- O projeto já inclui `cypress` nas dependências. Caso necessário, reinstale:
+```bash
+npm install
+```
+
+### Como executar
+- Abrir o Test Runner interativo:
+```bash
+npx cypress open
+```
+
+- Executar em modo headless (CI/local):
+```bash
+npx cypress run
+```
+
+Opcional: adicione scripts ao `package.json` para facilitar:
+```json
+{
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  }
+}
+```
+
+### Estrutura dos testes
+```
+cypress/
+├── e2e/
+│   ├── 001-home/
+│   │   └── home.cy.js         # Testes da página inicial
+│   └── 002-login/
+│       └── login.cy.js        # Testes de autenticação (login)
+├── fixtures/
+│   └── example.json           # Dados estáticos de apoio
+└── support/
+    ├── commands.js            # Comandos customizados
+    └── e2e.js                 # Configuração global de testes
+```
+
+### Boas práticas
+- Prefira selecionar elementos por `data-testid` ao invés de classes/ids
+- Isole dados em `fixtures` quando possível
+- Nomeie os arquivos com o fluxo funcional testado (ex.: `login`, `home`)
 
 ## 🤝 Contribuição
 
