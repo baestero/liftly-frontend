@@ -1,4 +1,4 @@
-export const API_URL = "https://liftly-backend-fjhi.onrender.com"";
+export const API_URL = "https://liftly-backend-fjhi.onrender.com";
 
 //"https://liftly-backend-fjhi.onrender.com"
 //"http://localhost:3000"
