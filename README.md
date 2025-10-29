@@ -2,6 +2,8 @@
 
 Frontend da aplicação **Liftly** - Uma plataforma completa para gerenciamento de exercícios físicos e treinos. Este é o frontend React que se conecta com a API backend para fornecer uma interface moderna e intuitiva para usuários gerenciarem seus exercícios.
 
+![WhatsApp Image 2025-10-15 at 02 45 52](https://github.com/user-attachments/assets/e0abd302-10f4-4d75-9535-130d7fb08de4)
+
 ## 📋 Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
