@@ -7,9 +7,13 @@ const Home = () => {
   return (
     <section className="home">
       <div className={`${styles.forms} animeLeft`}>
-        <h1 className="title">LiftLy</h1>
-        <p className="descricao">Mais peso, mais séries, mais evolução.</p>
-        <Link to={"/login"} className={stylesBtn.button}>
+        <h1 className="title" data-cy="home-title">
+          LiftLy
+        </h1>
+        <p className="descricao" data-cy="home-description">
+          Mais peso, mais séries, mais evolução.
+        </p>
+        <Link to={"/login"} className={stylesBtn.button} data-cy="home-btn">
           Começar
         </Link>
       </div>

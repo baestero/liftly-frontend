@@ -15,7 +15,11 @@ const Header = () => {
           <Logo />
         </Link>
         {dataUser ? (
-          <Link className={styles.login} to={"/dashboard"}>
+          <Link
+            className={styles.login}
+            data-cy="header-user"
+            to={"/dashboard"}
+          >
             {`Olá ${dataUser.username}`}
             <Logout className={styles.iconLogout} onClick={userLogout} />
           </Link>

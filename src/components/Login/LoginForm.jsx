@@ -36,6 +36,7 @@ const LoginForm = () => {
           <div className={styles.inputContainer}>
             <User className={styles.icon} />
             <Input
+              data-cy="login-user"
               type="text"
               name="username"
               placeholder="Usuário"
@@ -46,6 +47,7 @@ const LoginForm = () => {
           <div className={styles.inputContainer}>
             <Password className={styles.icon} />
             <Input
+              data-cy="login-password"
               type="password"
               name="password"
               placeholder="Senha"
@@ -60,9 +62,15 @@ const LoginForm = () => {
             </div>
           ) : (
             <div className={styles.buttonContainer}>
-              <Button className={stylesBtn.button}>Entrar</Button>
+              <Button className={stylesBtn.button} data-cy="login-btn-entrar">
+                Entrar
+              </Button>
 
-              <Link className={stylesBtn.buttonCadastrar} to={"/login/criar"}>
+              <Link
+                className={stylesBtn.buttonCadastrar}
+                data-cy="login-btn-cadastro"
+                to={"/login/criar"}
+              >
                 {" "}
                 Cadastro
               </Link>
